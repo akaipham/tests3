@@ -1,0 +1,13 @@
+.idea
+.DS_Store
+reports
+lib
+build
+npm-debug.log
+.env
+/development
+/deployment
+compose
+compose_config
+vd/
+node_modules/

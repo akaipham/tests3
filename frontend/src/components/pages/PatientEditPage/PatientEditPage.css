@@ -1,0 +1,129 @@
+.wrapper-inside {
+  max-width: 800px;
+  background-color: white;
+  margin: 50px auto;
+  padding: 50px;
+  border-radius: 4px;
+  box-shadow: 0 1px 2px rgba(0,0,0,.075);
+}
+
+.profile-wrapper {
+  padding: 20px;
+}
+
+.upload-area {
+  cursor: pointer;
+}
+
+.image-upload > input {
+    display: none;
+}
+
+.custom-row{
+  margin-bottom: 20px;
+}
+
+.box-wrapper {
+  width: 49%;
+  padding-top: 10px;
+  border-radius: 4px;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 0px 3px #aaaaaa;
+}
+
+.box-wrapper.full {
+  width: 100%;
+}
+
+.box-wrapper.right {
+  margin-left: 2%;
+}
+
+.box-wrapper p {
+  margin: 0;
+}
+
+.box-wrapper > input {
+  border: none;
+  outline: none;
+  box-shadow: none;
+  padding-left: 0px;
+}
+
+.box-wrapper > input:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.box-textarea-wrapper {
+  padding: 10px;
+  border-radius: 4px;
+  box-shadow: 0 0px 3px #aaaaaa;
+}
+
+.box-textarea-wrapper > textarea {
+  border: none;
+  outline: none;
+  box-shadow: none;
+  padding-left: 0px;
+}
+
+.box-textarea-wrapper > textarea:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* RADIO BUTTONS */
+input[type=radio].css-checkbox {
+	position:absolute; z-index:-1000; left:-1000px; overflow: hidden; clip: rect(0 0 0 0); height:1px; width:1px; margin:-1px; padding:0; border:0;
+}
+
+input[type=radio].css-checkbox + label.css-label {
+	padding-left:24px;
+	height:19px;
+	display:inline-block;
+	background-repeat:no-repeat;
+	background-position: 0 0;
+	vertical-align:middle;
+	cursor:pointer;
+  color: #aaaaaa;
+}
+
+input[type=radio].css-checkbox:checked + label.css-label {
+	background-position: 0 -19px;
+  color: black;
+}
+
+label.css-label {
+  margin-right: 20px;
+	background-image:url(http://csscheckbox.com/checkboxes/u/csscheckbox_f5a0bac71f2d241ee9a9c97860a9eae4.png);
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+  font-weight: normal;
+}
+
+.option-wrapper{
+  margin-top: 10px;
+}
+
+.add-contact-btn {
+  cursor: pointer;
+}
+
+.heading-section {
+  font-weight: 300;
+  font-size: medium;
+}
+
+.col-no-padding {
+  padding: 0;
+}
+
+.form-control[disabled] {
+    opacity: 0.5;
+}

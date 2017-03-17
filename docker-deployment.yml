@@ -1,0 +1,26 @@
+version: '2'
+services:
+
+  frontend:
+    image: localhost:5000/vault-frontend
+
+  backend:
+    image: localhost:5000/vault-backend
+    volumes:
+      - ./${ENVIRONMENT}/backend_data/upload:/app/upload
+      - ./${ENVIRONMENT}/backend_data/tmp:/app/tmp
+    depends_on:
+      - db
+  
+  proxy:
+    depends_on:
+      - frontend
+      - backend
+    volumes:
+      - ./configuration/deployment/nginx.conf:/etc/nginx/conf.d/default.conf
+      - ./configuration/deployment/ssl/:/etc/ssl/
+    env_file:
+      - ./configuration/deployment/config
+    ports:
+      - 80:80
+      - 443:443

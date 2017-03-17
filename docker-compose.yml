@@ -1,0 +1,10 @@
+version: '2'
+services:
+
+  db:
+    image: mongo:3.0
+    volumes:
+      - ./${ENVIRONMENT}/dbdata:/data/db
+
+  proxy:
+    image: nginx:1.10.2
