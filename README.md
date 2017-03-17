@@ -68,7 +68,7 @@ $ mongo # then, inside the container you just need to do this to access the db
 ```
 
 # API DOC
-**Title**
+
 ----
 `Update Patient`
 
