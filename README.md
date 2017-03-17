@@ -66,3 +66,215 @@ $ mongo mongodb://127.0.0.1:27017/VaultData
 $ docker exec -it jdadevelopment_db_1 bash # this will bring you to the db's docker container
 $ mongo # then, inside the container you just need to do this to access the db
 ```
+
+# API DOC
+**Title**
+----
+`Update Patient`
+
+* **URL**
+
+  `/patient`
+
+* **Method:**
+
+  `PUT`
+
+* **Data Params**
+
+  `{_id?: string;
+    status?: string;
+    profilePhoto?: string;
+    birthday?: string;
+    name: string;
+    gender?: string;
+    pastMediacation?: string;
+    tags?: any;
+    contacts?: any;
+    answer?: any;
+    createdAt?: Date;
+    updatedAt?: Date;}`
+
+* **Success Response:**
+  * **Code:** 200 <br />
+    **Content:** 
+`{  "_id": "58ca350a67c22610442d9a84",
+    "profilePhoto": "http://dummyimage.com/101x106.jpg/cc0000/ffffff",
+    "birthday": "5/20/2016",
+    "name": "Helen",
+    "pastMediacation": "Hbbnkmm",
+    "__v": 0,
+    "updatedAt": "2017-03-17T06:49:32.867Z",
+    "createdAt": "2017-03-17T06:49:32.867Z",
+    "answer": {
+      "value": false,
+      "context": ".....Alo....."
+    },
+    "contacts": [
+      {
+        "address": "Address Example",
+        "postalCode": "000000",
+        "email": "email@vault.com",
+        "phone": "0000000000",
+        "_id": "58ca350a67c22610442d9a85"
+      }
+    ],
+    "tags": [
+      "VHJkkRodgers",
+      "1"
+    ],
+    "gender": "Female",
+    "status": "open"
+  }`
+* **Error Response:**
+    **Code:** 0 Throw <br />
+    **Content:** `Invalid Interface`
+* **Sample Call:**
+
+* **Notes:**
+
+  <_This is where all uncertainties, commentary, discussion etc. can go. I recommend timestamping and identifying oneself when leaving comments here._> 
+
+----
+`Fetch all Patients`
+
+* **URL**
+
+  `/patient-all`
+
+* **Method:**
+
+  `GET`
+
+* **Data Params**
+
+  ``
+
+* **Success Response:**
+  * **Code:** 200 <br />
+    **Content:** 
+`[
+  {
+    "_id": "58ca350a67c22610442d9a84",
+    "status": "open",
+    "profilePhoto": "http://dummyimage.com/101x106.jpg/cc0000/ffffff",
+    "birthday": "5/20/2016",
+    "name": "Helen",
+    "gender": "Female",
+    "pastMediacation": "Hbbnkmm",
+    "tags": [
+      "VHJkkRodgers",
+      "1"
+    ],
+    "contacts": [
+      {
+        "address": "Address Example",
+        "postalCode": "000000",
+        "email": "email@vault.com",
+        "phone": "0000000000",
+        "_id": "58ca350a67c22610442d9a85"
+      }
+    ],
+    "answer": {
+      "context": ".....Alo.....",
+      "value": false
+    },
+    "createdAt": "2017-03-17T06:49:32.867Z",
+    "updatedAt": "2017-03-17T06:49:32.867Z"
+  },...
+`
+* **Error Response:**
+    **Code:** 500 Server Interval<br />
+
+* **Sample Call:**
+
+* **Notes:**
+
+  <_This is where all uncertainties, commentary, discussion etc. can go. I recommend timestamping and identifying oneself when leaving comments here._> 
+
+----
+`Fetch patients by keyword`
+
+* **URL**
+
+  `/patient-keyword`
+
+* **Method:**
+
+  `POST`
+
+* **Data Params**
+
+  ``
+
+* **Success Response:**
+  * **Code:** 200 <br />
+    **Content:** 
+`[
+  {
+    "_id": "58ca350a67c22610442d9a84",
+    "status": "open",
+    "profilePhoto": "http://dummyimage.com/101x106.jpg/cc0000/ffffff",
+    "birthday": "5/20/2016",
+    "name": "Helen",
+    "gender": "Female",
+    "pastMediacation": "Hbbnkmm",
+    "tags": [
+      "VHJkkRodgers",
+      "1"
+    ],
+    "contacts": [
+      {
+        "address": "Address Example",
+        "postalCode": "000000",
+        "email": "email@vault.com",
+        "phone": "0000000000",
+        "_id": "58ca350a67c22610442d9a85"
+      }
+    ],
+    "answer": {
+      "context": ".....Alo.....",
+      "value": false
+    },
+    "createdAt": "2017-03-17T06:49:32.867Z",
+    "updatedAt": "2017-03-17T06:49:32.867Z"
+  },...
+`
+* **Error Response:**
+    **Code:** 500 Server Interval<br />
+
+* **Sample Call:**
+
+* **Notes:**
+
+  <_This is where all uncertainties, commentary, discussion etc. can go. I recommend timestamping and identifying oneself when leaving comments here._> 
+
+
+----
+`Upload Profile Pic`
+
+* **URL**
+
+  `/upload-file`
+
+* **Method:**
+
+  `POST`
+
+* **Data Params**
+
+  `vault-file` : `[input file]`
+
+* **Success Response:**
+  * **Code:** 200 <br />
+    **Content:** 
+`{tmpUrl: /tmp/abxyz.jpg}`
+* **Error Response:**
+    **Code:** 500 Server Interval<br />
+
+* **Sample Call:**
+
+* **Notes:**
+`Filter: jpeg, jpg, png`
+`limit size: 3mb`
+  <_This is where all uncertainties, commentary, discussion etc. can go. I recommend timestamping and identifying oneself when leaving comments here._> 

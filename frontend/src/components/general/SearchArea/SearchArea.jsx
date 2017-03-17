@@ -18,7 +18,7 @@ class SearchArea extends Component {
             <input type="text" className="form-control" id="keyword" placeholder="Enter patient ID, name, phone..."></input>
           </div>
           <div className="form-group col-md-5 custom-search-input">
-            <input type="email" className="form-control" id="temp" placeholder="Find in all hospital"></input>
+            <input type="email" className="form-control" id="temp" placeholder="Find in all hospital" disabled title="Currently not support this function"></input>
           </div>
           <div className="col-md-1 text-center">
             <button type="button" className="btn btn-warning" onClick={this.searchPatient.bind(this)}><span className="glyphicon glyphicon-search"></span>  Find</button>

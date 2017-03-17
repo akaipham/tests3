@@ -26,22 +26,14 @@ export const fetchAllPatient = () => (dispatch) => {
 };
 
 export const searchPatient = (keyword) => (dispatch) => {
-  const options = {
-    method: 'POST',
-    url: `/api/patient-keyword`,
-    headers: {
-      'content-type': 'application/x-www-form-urlencoded'
-    },
-    form: {
-      keyword: keyword
-    }
-  };
-
-  request(options, function (error, response, body) {
-    if (error) dispatch(fetchAllPatientFailure(error))
-
-    dispatch(fetchAllPatientSuccess(JSON.parse(body)))
-  });
+  axios.post(`/api/patient-keyword`, {keyword: keyword})
+    .then(function (response) {
+      console.log(response);
+      dispatch(fetchAllPatientSuccess(response.data))
+    })
+    .catch(function (error) {
+      if (error) dispatch(fetchAllPatientFailure(error))  
+    });
 };
 
 export const callFilterByStatus = (filterStatus) => ({
